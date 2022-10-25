@@ -1,23 +1,123 @@
 import random
 
 
-def eGreedy(e: int) -> int:
+def eGreedy(e: int):
+    # stores the overall happiness value
     H1 = 0
     H2 = 0
     H3 = 0
+    # stores the average happiness value
+    AH1 = []
+    AH2 = []
+    AH3 = []
+    # stores how many times you have visited each cafeteria
+    count1 = 1
+    count2 = 1
+    count3 = 1
+
     if e == int():
         e = 10
-    for x in range(1):
-        H1 += random.randint(8, 12)
-        H2 += random.randint(8, 12)
-        H3 += random.randint(8, 12)
-    if H1 > H2 or H1 > H3:
-        print("Yay")
-        # for x in range(297):
+    # percentage of e
+    percE = 100 // e
+    # one run through for the first day
 
-    if H2 > H1 or H2 > H3:
-        print("Hurray")
-        # for x in range(297):
-    if H3 > H1 or H3 > H2:
-        print("Huzzah")
-        # for x in range(297):
+    while H1 == H2 or H1 == H3:  # -> change to if (maybe)
+        for x in range(1):
+            H1 = random.randint(8, 12)
+            H2 = random.randint(8, 12)
+            H3 = random.randint(8, 12)
+            # print(H1, H2, H3)
+    while H2 == H1 or H2 == H3:
+        for x in range(1):
+            H1 = random.randint(8, 12)
+            H2 = random.randint(8, 12)
+            H3 = random.randint(8, 12)
+    while H3 == H2 or H3 == H1:
+        for x in range(1):
+            H1 = random.randint(8, 12)
+            H2 = random.randint(8, 12)
+            H3 = random.randint(8, 12)
+
+    for x in range(299):
+        # chance they could come back as equal, not exactly sure how to get it to choose which one to go to.
+        # without it directly changing the variable
+        if H1 == H2 or H1 == H3:
+            for y in range(1):
+                count1 += 1
+                count2 += 1
+                count3 += 1
+                # got a bit to eat with all your friends
+                H1 += random.randint(8, 12)
+                H2 += random.randint(8, 12)
+                H3 += random.randint(8, 12)
+                # print(H1, H2, H3)
+                # ^ for testing, no need to uncomment
+        if H2 == H1 or H2 == H3:
+            for y in range(1):
+                count1 += 1
+                count2 += 1
+                count3 += 1
+                H1 += random.randint(8, 12)
+                H2 += random.randint(8, 12)
+                H3 += random.randint(8, 12)
+        if H3 == H2 or H3 == H1:
+            for y in range(1):
+                count1 += 1
+                count2 += 1
+                count3 += 1
+                H1 += random.randint(8, 12)
+                H2 += random.randint(8, 12)
+                H3 += random.randint(8, 12)
+
+        if H1 > H2 and H1 > H3:
+            while H1 > H2 and H1 > H3:
+                dec = random.randint(1, 100)
+                if dec >= percE:
+                    count1 += count1
+                    H1 += random.randint(8, 12)
+                    AH1.append(H1)
+                if dec < percE:
+                    dec2 = random.randint(1, percE)
+                    if dec2 < percE // 2:
+                        count2 += count2
+                        H2 += random.randint(8, 12)
+                        AH2.append(H2)
+                    if dec2 > percE // 2:
+                        count3 += count3
+                        H3 += random.randint(8, 12)
+                        AH3.append(H3)
+        if H2 > H1 and H2 > H3:
+            continue
+            # for x in range(297):
+        if H3 > H1 and H3 > H2:
+            continue
+            # for x in range(297):
+    # calculating average happiness for each time going to a certain cafeteria
+    AVG1 = 0
+    AVG2 = 0
+    AVG3 = 0
+    # OHAP - stands for optimal happiness
+
+    for x in AH1:
+        AVG1 = x + AVG1
+    OHAP1 = AVG1 * count1
+    AVG1 = AVG1 / count1
+
+    for x in AH2:
+        AVG2 = x + AVG2
+    OHAP2 = AVG2 * count2
+    AVG2 = AVG2 / count2
+
+    for x in AH3:
+        AVG3 = x + AVG3
+    OHAP3 = AVG3 * count3
+    AVG3 = AVG3 / count3
+
+    # calculating your regret
+    REG1 = OHAP1 - AVG1
+    REG2 = OHAP2 - AVG2
+    REG3 = OHAP3 - AVG3
+
+    # OREG is overall regret
+    OREG = REG1 + REG2 + REG3
+    print("Overall Regret", OREG)
