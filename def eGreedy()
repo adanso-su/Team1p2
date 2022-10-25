@@ -113,11 +113,11 @@ def eGreedy(e: int):
     OHAP3 = AVG3 * count3
     AVG3 = AVG3 / count3
 
-    # calculating your regret for each cafeteria
+    # calculating your average regret for each cafeteria
     REG1 = OHAP1 - AVG1
     REG2 = OHAP2 - AVG2
     REG3 = OHAP3 - AVG3
 
-    # OREG is overall regret
+    # OREG is overall average regret
     OREG = (REG1 + REG2 + REG3)/3
     print("Overall Regret", OREG)
