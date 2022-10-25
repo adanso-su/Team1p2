@@ -15,7 +15,7 @@ def exploitOnly():
 
 # average = 100*H1 + 100*H2+100*3
 # regret = 3000-average
-def exploreOnly():
+def exploreOnly(): #Akosua
     pass
 # countC1 = 0
 # happiness (for all 300 days?) = 0
@@ -28,7 +28,7 @@ def exploreOnly():
 
 
 # take input value of e (percent value)
-def eGreedy(e=10): # Noah Cirks
+def eGreedy(e=10):
     pass
 
 # optimum happiness
