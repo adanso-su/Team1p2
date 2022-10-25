@@ -119,5 +119,5 @@ def eGreedy(e: int):
     REG3 = OHAP3 - AVG3
 
     # OREG is overall regret
-    OREG = REG1 + REG2 + REG3
+    OREG = (REG1 + REG2 + REG3)/3
     print("Overall Regret", OREG)
