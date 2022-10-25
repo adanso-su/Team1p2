@@ -28,7 +28,7 @@ def exploreOnly():
 
 
 # take input value of e (percent value)
-def eGreedy(e=10):
+def eGreedy(e=10): # Noah Cirks
     pass
 
 # optimum happiness
