@@ -12,9 +12,6 @@ def exploitOnly():
 # C3: 100
 # Each day calculate happiness based on normal distribution w/certain mean and standard deviation
 # return the total sum of happiness value
-
-# one for loop
-# for i in range(100) gen c1 . c2, c3
 def exploreOnly2(): # Akosua
     happiness = 0 #(for all 300 days)
     for days in range(100):
