@@ -13,18 +13,18 @@ def exploitOnly():
 # Each day calculate happiness based on normal distribution w/certain mean and standard deviation
 # return the total sum of happiness value
 
-# average = 100*H1 + 100*H2+100*3
-# regret = 3000-average
-def exploreOnly(): #Akosua
-    pass
-# countC1 = 0
-# happiness (for all 300 days?) = 0
-# while countC1 < 100:
-    # generate a happiness value based on the cafeteria
-    # i = random.normalvariate(H1, D1)
-    # happiness = happiness + i
-    # countC1 = countC1 + 1 / countC1 += 1
-# return happiness
+# one for loop
+# for i in range(100) gen c1 . c2, c3
+def exploreOnly2(): # Akosua
+    happiness = 0 #(for all 300 days)
+    for days in range(100):
+        cafe1 = random.normalvariate(10, 8)
+        cafe2 = random.normalvariate(15, 6)
+        cafe3 = random.normalvariate(12, 5)
+        happiness = happiness + int(cafe1) + int(cafe2) + int(cafe3)
+    return happiness
+# range of happiness value should be (1800, 5600)
+
 
 
 # take input value of e (percent value)
