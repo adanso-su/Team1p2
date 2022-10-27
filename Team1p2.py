@@ -6,7 +6,7 @@ D2 = 6
 H3 = 12
 D3 = 5
 #first 3 days, visit each cafeteria
-def exploitOnly():
+def exploitOnly(): # Yuchao
     H = [H1, H2, H3]
     D = [D1, D2, D3]
     Happiness1 = random.normalvariate(H1, D1)
@@ -49,5 +49,5 @@ def eGreedy(e=10): # Noah Cirks
 # expected regret
 # run simulation, for t trials
 # compare them to the expected values
-def simu(): #Monet :)
+def simu(): # Monet :)
     pass
