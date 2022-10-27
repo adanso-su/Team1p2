@@ -28,9 +28,9 @@ def exploitOnly(): # Yuchao
 def exploreOnly(): # Akosua
     happiness = 0 #(for all 300 days)
     for days in range(100):
-        cafe1 = random.normalvariate(10, 8)
-        cafe2 = random.normalvariate(15, 6)
-        cafe3 = random.normalvariate(12, 5)
+        cafe1 = random.normalvariate(H1, D1)
+        cafe2 = random.normalvariate(H2, D2)
+        cafe3 = random.normalvariate(H3, H3)
         happiness = happiness + cafe1 + cafe2 + cafe3
     return int(happiness) # return the whole integer value w/out decimals
 # range of happiness value should be (1800, 5600)
