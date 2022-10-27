@@ -34,8 +34,8 @@ def exploreOnly2(): # Akosua
         cafe1 = random.normalvariate(10, 8)
         cafe2 = random.normalvariate(15, 6)
         cafe3 = random.normalvariate(12, 5)
-        happiness = happiness + int(cafe1) + int(cafe2) + int(cafe3)
-    return happiness
+        happiness = happiness + cafe1 + cafe2 + cafe3
+    return int(happiness)
 # range of happiness value should be (1800, 5600)
 
 
