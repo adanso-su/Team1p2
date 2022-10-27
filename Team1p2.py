@@ -1,8 +1,24 @@
 import random
-
+H1 = 10
+D1 = 8
+H2 = 15
+D2 = 6
+H3 = 12
+D3 = 5
 #first 3 days, visit each cafeteria
 def exploitOnly():
-    pass
+    H = [H1, H2, H3]
+    D = [D1, D2, D3]
+    Happiness1 = random.normalvariate(H1, D1)
+    Happiness2 = random.normalvariate(H2, D2)
+    Happiness3 = random.normalvariate(H3, D3)
+    Happiness = [Happiness1, Happiness2, Happiness3]
+    maxIndex = Happiness.index(max(Happiness))
+    sumHappiness = Happiness1 + Happiness2 + Happiness3
+    for i in range(297):
+        tempHappiness = random.normalvariate(H[maxIndex], D[maxIndex])
+        sumHappiness += tempHappiness
+    return sumHappiness
 
 # random libray -> random.normalvariate(mean, deviation)
 # happiness  = random.normalvariate(H1, D1)
