@@ -1,3 +1,4 @@
+# Akosua Danso
 import random 
 H1 = 10
 D1 = 8
