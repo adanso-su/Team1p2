@@ -25,7 +25,7 @@ def exploitOnly(): # Yuchao
 # visit each cafeteria 100 times (C1, C2, C3)
 # Each day calculate happiness based on normal distribution w/certain mean and standard deviation
 # return the total sum of happiness value
-def exploreOnly2(): # Akosua
+def exploreOnly(): # Akosua
     happiness = 0 #(for all 300 days)
     for days in range(100):
         cafe1 = random.normalvariate(10, 8)
