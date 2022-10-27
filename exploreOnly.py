@@ -5,6 +5,7 @@ H2 = 15
 D2 = 6
 H3 = 12
 D3 = 5
+
 # random libray -> random.normalvariate(mean, deviation)
 # happiness  = random.normalvariate(H1, D1)
 # visit each cafeteria 100 times
