@@ -22,10 +22,7 @@ def exploitOnly(): # Yuchao
 
 # random libray -> random.normalvariate(mean, deviation)
 # happiness  = random.normalvariate(H1, D1)
-# visit each cafeteria 100 times
-# C1; 100
-# C2: 100
-# C3: 100
+# visit each cafeteria 100 times (C1, C2, C3)
 # Each day calculate happiness based on normal distribution w/certain mean and standard deviation
 # return the total sum of happiness value
 def exploreOnly2(): # Akosua
