@@ -1,3 +1,11 @@
+import random
+from random import randint
+H1 = 10
+D1 = 8
+H2 = 15
+D2 = 6
+H3 = 12
+D3 = 5
 def eGreedy(e = 10):
     if e < 0 or e > 100:
         print("e should be between 0 and 100")
