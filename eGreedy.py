@@ -26,26 +26,38 @@ def eGreedy(e = 10):
     while i < 300:
         # generate random selection between 0 to 1, 0 stand for go to random cafeteria, and 1 stand for go to the max happiness cafeteria
         randomSelect = random.randint(0,1)
+        # 0 stand for go ramdom
         if randomSelect == 0:
             # this part gonna stop stop after e% of total 300 days
             if accumulatedRandomNum >= 300*e/100:
                 continue
+            # when random to 0, total count of go random days plus 1
             accumulatedRandomNum += 1
+            # random between 3 cafeterias
             selectCafeterias = random.randint(0,2)
+            # cafeteria 1
             if selectCafeterias == 0:
                 Happiness = random.normalvariate(H1, D1)
+            # cafeteria 2
             elif selectCafeterias == 1:
                 Happiness = random.normalvariate(H2, D2)
+            # cafeteria 3
             else:
                 Happiness = random.normalvariate(H3, D3)
+            # update the maxhappiness to cafeteria which has the highest value
             if Happiness > maxHappiness:
                 maxHappiness = Happiness
                 maxIndex = selectCafeterias
+        # 1 stand for go to max happiness cafeteria
         else:
+            # h is happiness of max happiness cafeteria, d is standard deviation of it
             h = H[maxIndex]
             d = D[maxIndex]
             Happiness = random.normalvariate(h,d)
+            #update the maxhappiness
             maxHappiness = Happiness
+        # calculate sum
         sumHappiness += Happiness
+        # the end on a day, plus 1 to total days count
         i += 1
     return sumHappiness
