@@ -27,21 +27,22 @@ def eGreedy(e: int):
     # one run through for the first day
 
     while H1 == H2 or H1 == H3:  # -> change to if (maybe)
-        for x in range(1):
-            H1 = random.randint(2, 18)
-            H2 = random.randint(9, 21)
-            H3 = random.randint(7, 19)
-            # print(H1, H2, H3)
+        H1 = random.randint(2, 18)
+        H2 = random.randint(9, 21)
+        H3 = random.randint(7, 19)
+        # print(H1, H2, H3)
     while H2 == H1 or H2 == H3:
-        for x in range(1):
-            H1 = random.randint(2, 18)
-            H2 = random.randint(9, 21)
-            H3 = random.randint(7, 19)
+        H1 = random.randint(2, 18)
+        H2 = random.randint(9, 21)
+        H3 = random.randint(7, 19)
     while H3 == H2 or H3 == H1:
-        for x in range(1):
-            H1 = random.randint(2, 18)
-            H2 = random.randint(9, 21)
-            H3 = random.randint(7, 19)
+        H1 = random.randint(2, 18)
+        H2 = random.randint(9, 21)
+        H3 = random.randint(7, 19)
+
+    AH1.append(H1)
+    AH2.append(H2)
+    AH3.append(H3)
 
     # 297 because you went to a different cafeteria for the first three days
     for x in range(297):
@@ -97,7 +98,8 @@ def eGreedy(e: int):
 
         # running for each cafeteria
         if H1 > H2 and H1 > H3:
-            while H1 > H2 and H1 > H3:
+            x = 0
+            if x == 0:
                 dec = random.randint(1, 100)
                 if dec > percE:
                     count1 += count1
@@ -114,7 +116,8 @@ def eGreedy(e: int):
                         H3 += random.randint(7, 19)
                         AH3.append(H3)
         if H2 > H1 and H2 > H3:
-            while H2 > H1 and H2 > H3:
+            x = 0
+            if x == 0:
                 dec = random.randint(1, 100)  # -> z = random.normalvariate(.01,1) change to
                 if dec > percE:
                     count2 += count2
@@ -131,7 +134,8 @@ def eGreedy(e: int):
                         H3 += random.randint(7, 19)
                         AH3.append(H3)
         if H3 > H1 and H3 > H2:
-            while H3 > H1 and H3 > H2:
+            x = 0
+            if x == 0:
                 dec = random.randint(1, 100)
                 if dec > percE:
                     count1 += count1
@@ -169,24 +173,3 @@ def eGreedy(e: int):
         AVG3 = x + AVG3
     AVG3 = AVG3 // count3
     print("Average Happiness for cafeteria 3 ->", AVG3)
-    # Optimal Happiness -> Count1 * 10, Count2 * 15, Count3 * 12.
-    OHAP1 = count1 * 10
-    OHAP2 = count2 * 15
-    OHAP3 = count3 * 12
-    print("Optimal Happiness for cafeteria 1 ->", OHAP1)
-    print("Optimal Happiness for cafeteria 2 ->", OHAP2)
-    print("Optimal Happiness for cafeteria 3 ->", OHAP3)
-    # calculating your average regret for each cafeteria
-    REG1 = OHAP1 - AVG1
-    REG2 = OHAP2 - AVG2
-    REG3 = OHAP3 - AVG3
-
-    # check the slides - see what exactly regret is
-    print("Cafeteria 1 regret -> ", REG1)
-    print("Cafeteria 2 regret -> ", REG2)
-    print("Cafeteria 3 regret ->", REG3)
-    # OREG is average regret
-
-    OREG = (REG1 + REG2 + REG3) // 3
-    print("Overall Regret ->", OREG)
-
