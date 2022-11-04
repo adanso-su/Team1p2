@@ -227,6 +227,7 @@ def eGreedy(e=10): # Noah Cirks
         AVG3 = x + AVG3
     AVG3 = AVG3 // count3
     # print("Average Happiness for cafeteria 3 ->", AVG3)
+    return TH
 
 
 # optimum happiness
