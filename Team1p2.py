@@ -210,6 +210,9 @@ def eGreedy(e=10): # Noah Cirks
     print("This is Happiness for cafeteria 2 ->", H2)
     print("This is Happiness for cafeteria 3 ->", H3)
     # OHAP - stands for optimal happiness
+    
+    TH = H1 + H2 + H3
+    print("This is the total Happiness -> ", TH)
 
     for x in AH1:
         AVG1 = x + AVG1
