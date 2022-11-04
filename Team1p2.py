@@ -235,7 +235,7 @@ def eGreedy(e=10): # Noah Cirks
 # run simulation, for t trials
 # compare them to the expected values
 # Monet :)
-    def simulation (t,e):
+def simulation (t,e):
     avgExplore = 0
     avgExploit = 0
     avgGreed = 0
@@ -260,18 +260,18 @@ def eGreedy(e=10): # Noah Cirks
         opt = avgGreed*t
 
     # expected & regret explore
-    exExplore = 100*cafe1 + 100*cafe2 + 100*cafe3 
+    exExplore = 100*H1 + 100*H2 + 100*H3 
     regExplore = opt - exExplore
 
     # expected & regret exploit
-    exExploit = Happiness1 + Happiness2 + Happiness3 + 297*10
+    exExploit = H1 + H2 + H3 + 297*H2
     regExploit = opt - exExploit
 
     # expected & regret greed
     rest = 100 - e
     hiday = (rest/100)*300
     lowday = ((e/3)/100)*300
-    exGreed = H1*hiday + H1*lowday + H2+lowday + H3*lowday
+    exGreed = H2*hiday + H1*lowday + H2+lowday + H3*lowday
     regGreed = opt - exGreed
 
     print ("Explore:\n")
