@@ -274,7 +274,7 @@ def simulation (t,e):
     exGreed = H2*hiday + H1*lowday + H2+lowday + H3*lowday
     regGreed = opt - exGreed
 
-    print ("Explore:\n")
+    print ("Explore:")
     print ("Optimum: ")
     print (opt)
     print ("Expected: ")
@@ -283,8 +283,9 @@ def simulation (t,e):
     print (regExplore)
     print ("Average: ")
     print (avgExplore)
-
-    print ("Exploit:\n")
+    
+    print ("\n")
+    print ("Exploit:")
     print ("Optimum: ")
     print (opt)
     print ("Expected: ")
@@ -293,7 +294,8 @@ def simulation (t,e):
     print (regExploit)
     print ("Average: ")
     print (avgExploit)
-
+    
+    print ("\n")
     print ("eGreedy:\n")
     print ("Optimum: ")
     print (opt)
