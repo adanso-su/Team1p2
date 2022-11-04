@@ -291,7 +291,7 @@ def simulation (t,e):
     print (exExploit)
     print ("Regret: ")
     print (regExploit)
-    print ("Average: "
+    print ("Average: ")
     print (avgExploit)
 
     print ("eGreedy:\n")
