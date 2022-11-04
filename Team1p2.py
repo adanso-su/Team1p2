@@ -206,27 +206,27 @@ def eGreedy(e=10): # Noah Cirks
     AVG1 = 0
     AVG2 = 0
     AVG3 = 0
-    print("This is Happiness for cafeteria 1 ->", H1)
-    print("This is Happiness for cafeteria 2 ->", H2)
-    print("This is Happiness for cafeteria 3 ->", H3)
+   # print("This is Happiness for cafeteria 1 ->", H1)
+   # print("This is Happiness for cafeteria 2 ->", H2)
+   # print("This is Happiness for cafeteria 3 ->", H3)
     # OHAP - stands for optimal happiness
     
     TH = H1 + H2 + H3
-    print("This is the total Happiness -> ", TH)
+    # print("This is the total Happiness -> ", TH)
 
     for x in AH1:
         AVG1 = x + AVG1
     AVG1 = AVG1 // count1
-    print(" Average Happiness for cafeteria 1 ->", AVG1)
+    # print(" Average Happiness for cafeteria 1 ->", AVG1)
     for x in AH2:
         AVG2 = x + AVG2
     AVG2 = AVG2 // count2
-    print("Average Happiness for cafeteria 2 ->", AVG2)
+    # print("Average Happiness for cafeteria 2 ->", AVG2)
 
     for x in AH3:
         AVG3 = x + AVG3
     AVG3 = AVG3 // count3
-    print("Average Happiness for cafeteria 3 ->", AVG3)
+    # print("Average Happiness for cafeteria 3 ->", AVG3)
 
 
 # optimum happiness
