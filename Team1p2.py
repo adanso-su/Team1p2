@@ -233,7 +233,7 @@ def eGreedy(e=10): # Noah Cirks
 # compare them to the expected values
 # Monet :)
     def simulation (t,e):
-    avgExploit = 0
+    avgExplore = 0
     avgExploit = 0
     avgGreed = 0
     count = t
