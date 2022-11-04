@@ -239,8 +239,8 @@ def simu(): # Monet :)
     count = t
     # average
     while (count > 0):
-       avgExplore += explore()
-       avgExploit += exploit()
+       avgExplore += exploreOnly()
+       avgExploit += exploitOnly()
        avgGreed += eGreedy()
        count -= 1
 
