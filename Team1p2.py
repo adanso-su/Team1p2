@@ -231,7 +231,7 @@ def eGreedy(e=10): # Noah Cirks
 # expected regret
 # run simulation, for t trials
 # compare them to the expected values
-def simu(): # Monet :)
+# Monet :)
     def simulation (t,e):
     avgExploit = 0
     avgExploit = 0
