@@ -241,7 +241,7 @@ def eGreedy(e=10): # Noah Cirks
     while (count > 0):
        avgExplore += exploreOnly()
        avgExploit += exploitOnly()
-       avgGreed += eGreedy()
+       avgGreed += eGreedy(e)
        count -= 1
 
     avgExplore = avgExplore/t
