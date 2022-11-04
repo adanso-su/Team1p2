@@ -232,4 +232,59 @@ def eGreedy(e=10): # Noah Cirks
 # run simulation, for t trials
 # compare them to the expected values
 def simu(): # Monet :)
-    pass
+    def simulation (t,e):
+    avgExploit = 0
+    avgExploit = 0
+    avgGreed = 0
+    count = t
+    # average
+    while (count > 0):
+       avgExplore += explore()
+       avgExploit += exploit()
+       avgGreed += eGreedy()
+       count -= 1
+
+    avgExplore = avgExplore/t
+    avgExploit = avgExploit/t
+    avgGreed = avgGreed/t
+
+    # optimum 
+    if (avgExplore > avgExploit and avgGreed):
+        opt = avgExplore*t
+    elif (avgExploit > avgExplore and avgGreed):
+        opt = avgExploit*t
+    else:
+        opt = avgGreed*t
+
+    # expected & regret explore
+    exExplore = 100*cafe1 + 100*cafe2 + 100*cafe3 
+    regExplore = opt - exExplore
+
+    # expected & regret exploit
+    exExploit = Happiness1 + Happiness2 + Happiness3 + 297*10
+    regExploit = opt - exExploit
+
+    # expected & regret greed
+    rest = 100 - e
+    hiday = (rest/100)*300
+    lowday = ((e/3)/100)*300
+    exGreed = H1*hiday + H1*lowday + H2+lowday + H3*lowday
+    regGreed = opt - exGreed
+
+    print ("Explore:\n")
+    print ("Optimum: " + opt)
+    print ("Expected: " + exExplore)
+    print ("Regret: " + regExplore)
+    print ("Average: " + avgExplore)
+
+    print ("Exploit:\n")
+    print ("Optimum: " + opt)
+    print ("Expected: " + exExploit)
+    print ("Regret: " + regExploit)
+    print ("Average: " + avgExploit)
+
+    print ("eGreedy:\n")
+    print ("Optimum: " + opt)
+    print ("Expected: " + exGreed)
+    print ("Regret: " + regGreed)
+    print ("Average: " + avgGreed)
