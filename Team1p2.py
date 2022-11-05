@@ -253,12 +253,12 @@ def simulation (t,e):
     avgGreed = avgGreed/t
 
     # optimum 
-    if (avgExplore > avgExploit and avgGreed):
-        opt = avgExplore*t
-    elif (avgExploit > avgExplore and avgGreed):
-        opt = avgExploit*t
+    if (avgExplore > avgExploit and avgExplore > avgGreed):
+        opt = avgExplore
+    elif (avgExploit > avgExplore and avgExploit > avgGreed):
+        opt = avgExploit
     else:
-        opt = avgGreed*t
+        opt = avgGreed
 
     # expected & regret explore
     exExplore = 100*H1 + 100*H2 + 100*H3 
