@@ -18,7 +18,7 @@ def eGreedy(e = 10):
     sumHappiness = 0
     maxHappiness = 0
     # initial max index is a random selection between 1 to 3 (1,2,3), because there will be no value for max happiness if first day randomly chose to go to the max happiness cafeteria
-    maxIndex = random.randint(1,3)
+    maxIndex = random.randint(0,2)
     # initial accumulated number of day which chose to go random cafeteria, which means e% days of 300 days
     accumulatedRandomNum = 0
     # initial total number of day i
