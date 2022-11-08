@@ -1,12 +1,15 @@
 import random
+
 H1 = 10
 D1 = 8
 H2 = 15
 D2 = 6
 H3 = 12
 D3 = 5
-#first 3 days, visit each cafeteria
-def exploitOnly(): # Yuchao
+
+
+# first 3 days, visit each cafeteria
+def exploitOnly():  # Yuchao
     H = [H1, H2, H3]
     D = [D1, D2, D3]
     Happiness1 = random.normalvariate(H1, D1)
@@ -20,26 +23,28 @@ def exploitOnly(): # Yuchao
         sumHappiness += tempHappiness
     return sumHappiness
 
+
 # random libray -> random.normalvariate(mean, deviation)
 # happiness  = random.normalvariate(H1, D1)
 # visit each cafeteria 100 times (C1, C2, C3)
 # Each day calculate happiness based on normal distribution w/certain mean and standard deviation
 # return the total sum of happiness value
-def exploreOnly(): # Akosua
-    happiness = 0 #(for all 300 days)
+def exploreOnly():  # Akosua
+    happiness = 0  # (for all 300 days)
     for days in range(100):
         cafe1 = random.normalvariate(H1, D1)
         cafe2 = random.normalvariate(H2, D2)
         cafe3 = random.normalvariate(H3, D3)
         happiness = happiness + cafe1 + cafe2 + cafe3
-    return int(happiness) # return the whole integer value w/out decimals
+    return int(happiness)  # return the whole integer value w/out decimals
+
+
 # range of happiness value should be (1800, 5600)
 
 
-
 # take input value of e (percent value)
-def eGreedy(e=10): # Noah Cirks 
-        # stores the overall happiness value
+def eGreedy(e=10):  # Noah Cirks
+    # stores the overall happiness value
     H1 = 0
     H2 = 0
     H3 = 0
@@ -206,11 +211,11 @@ def eGreedy(e=10): # Noah Cirks
     AVG1 = 0
     AVG2 = 0
     AVG3 = 0
-   # print("This is Happiness for cafeteria 1 ->", H1)
-   # print("This is Happiness for cafeteria 2 ->", H2)
-   # print("This is Happiness for cafeteria 3 ->", H3)
+    # print("This is Happiness for cafeteria 1 ->", H1)
+    # print("This is Happiness for cafeteria 2 ->", H2)
+    # print("This is Happiness for cafeteria 3 ->", H3)
     # OHAP - stands for optimal happiness
-    
+
     TH = H1 + H2 + H3
     # print("This is the total Happiness -> ", TH)
 
@@ -236,73 +241,71 @@ def eGreedy(e=10): # Noah Cirks
 # run simulation, for t trials
 # compare them to the expected values
 # Monet :)
-def simulation (t,e):
+def simulation(t, e): #4500
     avgExplore = 0
     avgExploit = 0
     avgGreed = 0
     count = t
     # average
     while (count > 0):
-       avgExplore = avgExplore + exploreOnly()
-       avgExploit = avgExploit + exploitOnly()
-       avgGreed = avgGreed + eGreedy(e)
-       count = count - 1
+        avgExplore = avgExplore + exploreOnly()
+        avgExploit = avgExploit + exploitOnly()
+        avgGreed = avgGreed + eGreedy(e)
+        count = count - 1
 
-    avgExplore = avgExplore/t
-    avgExploit = avgExploit/t
-    avgGreed = avgGreed/t
+    avgExplore = avgExplore / t
+    avgExploit = avgExploit / t
+    avgGreed = avgGreed / t
 
-    # optimum 
-    if (avgExplore > avgExploit and avgExplore > avgGreed):
-        opt = avgExplore
-    elif (avgExploit > avgExplore and avgExploit > avgGreed):
-        opt = avgExploit
-    else:
-        opt = avgGreed
+    # optimum
+    opt = H2 * 300
 
     # expected & regret explore
-    exExplore = 100*H1 + 100*H2 + 100*H3 
+    exExplore = 100 * H1 + 100 * H2 + 100 * H3
     regExplore = opt - exExplore
 
     # expected & regret exploit
-    exExploit = H1 + H2 + H3 + 297*H2
+    exExploit = H1 + H2 + H3 + 297 * H2
     regExploit = opt - exExploit
 
     # expected & regret greed
     rest = 100 - e
-    hiday = (rest/100)*300
-    lowday = ((e/3)/100)*300
-    exGreed = H2*hiday + H1*lowday + H2+lowday + H3*lowday
-    regGreed = opt - exGreed
+    hiday = (rest / 100) * 300
+    lowday = e
+    exGreed = H2 * hiday + H1 * lowday + H2 * lowday + H3 * lowday # should be
+    regGreed = opt - exGreed # SHOULD BE 4420
 
-    print ("Explore:")
-    print ("Optimum: ")
-    print (opt)
-    print ("Expected: ")
-    print (exExplore)
-    print ("Regret: ")
-    print (regExplore)
-    print ("Average: ")
-    print (avgExplore)
-    
-    print ("\n")
-    print ("Exploit:")
-    print ("Optimum: ")
-    print (opt)
-    print ("Expected: ")
-    print (exExploit)
-    print ("Regret: ")
-    print (regExploit)
-    print ("Average: ")
-    print (avgExploit)
-    
-    print ("\n")
-    print ("eGreedy:\n")
-    print ("Optimum: ")
-    print (opt)
-    print ("Expected: ")
-    print (exGreed)
-    print ("Regret: ")
-    print (regGreed)
-    print ("Average: ")
-    print (avgGreed)
+
+    print("Explore:")
+    print("Optimum: ")
+    print(opt)
+    print("Expected: ")
+    print(exExplore)
+    print("Regret: ")
+    print(regExplore)
+    print("Average: ")
+    print(avgExplore)
+
+    print("\n")
+    print("Exploit:")
+    print("Optimum: ")
+    print(opt)
+    print("Expected: ")
+    print(exExploit)
+    print("Regret: ")
+    print(regExploit)
+    print("Average: ")
+    print(avgExploit)
+
+    print("\n")
+    print("eGreedy:\n")
+    print("Optimum: ")
+    print(opt)
+    print("Expected: ")
+    print(exGreed)
+    print("Regret: ")
+    print(regGreed)
+    print("Average: ")
+    print(avgGreed)
+    # print(hiday)
+    # print(lowday)
