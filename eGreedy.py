@@ -53,4 +53,3 @@ def eGreedy(e=10):
         maxIndex = averageList.index(max(averageList))
         sumHappiness += timeHappiness
     return sumHappiness
-print(eGreedy(10))
